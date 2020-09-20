@@ -2,6 +2,8 @@
 #include <algorithm> 
 #include <iostream> 
 using namespace std;
+
+int linearSearch(long int *arr , int n , long int target);
 int main()
 {
 	int test;
@@ -10,23 +12,33 @@ int main()
 	{
 		int n;
 		cin>>n;
-		int arr[n];
-		int operation = 1;
-		int x;
-		cin >> x;
-		arr[0] = x;
-		for(int i=1;i<n;i++)
+		long int arr[n];
+		int operation = 0;
+		long int x;
+
+		
+		for(int i=0;i<n;i++)
 		{
-			cin >> x;
-			sort(arr , arr + operation );
-			if(!binary_search(arr ,arr+operation , x))
-			{
-				arr[operation] = x ;
-				operation++;
-			}
+			cin >>x;
+			
 		}
 		cout << operation<< endl;
 		// The whole question boils down to find distinct elements from these n elements.
 
 	}
+}
+
+int linearSearch(long int *arr , int n , long int target)
+{
+	//cout << "searching "<< target << " in arrary of size"<< n << endl;
+	if (n==0)
+	{
+		return 0;
+	}
+	for(int i=0;i<n;i++)
+	{
+		if(arr[i]==target)
+		return 1;
+	}
+	return 0;
 }

@@ -8,31 +8,36 @@ int main()
 	while (t--)
 	{
 		int n;
-		cin>>n;
+		cin >> n;
 		int sum = n*(n+1)/2;
-		if(sum%2)
-		{
+		if (sum%2 || n==0 || n==1 || n==2){
 			cout << "0"<<endl;
 			continue;
 		}
-		int index = n/2;
-		int s = index*(index+1)/2;
-		for(;index<n;index++)
-		{
-			if(s < sum/2)
-			{
-				s += index+1;
-			}
-			else
-			{
-				break;
-			}
-			
-		}
-		int rem = sum/2 - index*(index-1)/2;
-		int count = n - (index-1);
+		int index = n/2 - 1;
+		int curr = index*(index+1)/2;
 
-		cout << count << endl;
+		while(curr < (sum/2)-n)
+		{
+			cout << "hi" << endl;
+			index += 1;
+			curr += index;
+		}
+		int rem = (sum/2) - curr;
+
+		
+		if (index>=rem && (n-index)>=rem)
+		{
+			cout << rem << endl;
+			continue;
+		}
+		if (index < n-index)
+		{
+			cout << index << endl;
+		}
+		else
+		{
+			cout << n-index << endl;
+		}
 	}
-	
 }

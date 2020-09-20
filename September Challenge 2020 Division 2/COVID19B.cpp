@@ -14,50 +14,48 @@ int main()
 		{
 			cin >> v[i];
 		}
+		if(n==3){
+		double t12 = 1/(v[1]-v[0]);
+		double t23 = 1/(v[2]-v[1]);
+		double t13 = 2/(v[2]-v[0]);
+		if (t12>0 && t13>0)
+		{
+			cout << "3 3"<<endl;
+		}
+		else if ()
+		{
+			/* code */
+		}
+		
+		
+
+
+		}
+
+
+
+
+
+
+
+
+
 		int max_affected = 0;
 		int min_affected = n;
 		for(int initially_affected = 0; initially_affected < n ; initially_affected++)
 		{
+			int arr[5];
 			int people_affected = 1;
 			long double time=0 ;
-			for(int i=initially_affected ; i<n-1 ;i++)
+			for (int i = 0; i < n; i++)
 			{
-				if (v[i]==v[i+1] || v[i]==0 || v[i+1]==0)
+				if ()
 				{
-					break;
+					/* code */
 				}
-
-				long double t = 1.0/(v[i]-v[i+1]);
-				if (t>0 && t>=time )
-				{
-					//cout << "initially affected = "<<i << "  other = "<<i+1 << " time = "<< t << endl;
-					people_affected++;
-					time = t;
-				}
-				else
-				{
-					break;
-				}
+				
 			}
-			time = 0;
-			for (int i = initially_affected; i>=1; i--)
-			{
-				if (v[i]==v[i-1]||v[i]==0 || v[i-1]==0)
-				{
-					break;
-				}
-
-				long double t = 1.0/(v[i-1]-v[i]);
-				if (t>0 && t>=time )
-				{
-					people_affected++;
-					time = t;
-				}
-				else
-				{
-					break;
-				}
-			}
+			
 			
 			//cout << "people affected = " << people_affected << "  initially infected = " << initially_affected << endl;
 			if (people_affected > max_affected)
